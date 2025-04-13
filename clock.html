@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>the time</title>
+  <style>
+    body {
+      font-family: "Helvetica", sans-serif;
+      text-align: center;
+      margin-top: 100px;
+      background-color: #f5f5f5;
+    }
+    h1 {
+      color: #333;
+    }
+    #time {
+      font-size: 48px;
+      color: #2c7;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>現在時間是：</h1>
+  <div id="time">載入中...</div>
+
+  <script>
+    function updateTime() {
+      const now = new Date();
+      const timeString = now.toLocaleTimeString(); // 會自動依系統語言格式顯示
+      document.getElementById("time").textContent = timeString;
+    }
+
+    // 一開始先顯示一次時間
+    updateTime();
+
+    // 每秒更新一次
+    setInterval(updateTime, 1000);
+  </script>
+
+</body>
+</html>
